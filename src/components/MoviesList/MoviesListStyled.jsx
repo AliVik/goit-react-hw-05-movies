@@ -5,6 +5,7 @@ export const StyledMoviesList = styled.ul`
   margin: 0;
   padding: 0;
   margin-top: 15px;
+  max-width: 400px;
 `;
 
 export const StyledMoviesItem = styled.li`
