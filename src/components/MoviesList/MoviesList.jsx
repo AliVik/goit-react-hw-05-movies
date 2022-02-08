@@ -1,10 +1,25 @@
+import {
+  StyledMoviesList,
+  StyledMoviesItem,
+  StyledMovieName,
+  MovieLink,
+} from './MoviesListStyled';
+import { IoRocketSharp } from 'react-icons/io5';
+
 export default function MoviesList({ movies }) {
   return (
-    <ul>
+    <StyledMoviesList>
       {movies.map(movie => {
         const { id, title } = movie;
-        return <li key={id}>{title}</li>;
+        return (
+          <StyledMoviesItem key={id}>
+            <MovieLink to="/movies">
+              <IoRocketSharp />
+              <StyledMovieName>{title}</StyledMovieName>
+            </MovieLink>
+          </StyledMoviesItem>
+        );
       })}
-    </ul>
+    </StyledMoviesList>
   );
 }
