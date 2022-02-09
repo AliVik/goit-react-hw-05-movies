@@ -9,4 +9,11 @@ async function getTrendingMoviesFromAPI() {
   );
   return response.data.results;
 }
+
+export async function getMovieById(movieId) {
+  const response = await axios.get(
+    `${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+  );
+  return response.data;
+}
 export default getTrendingMoviesFromAPI;
