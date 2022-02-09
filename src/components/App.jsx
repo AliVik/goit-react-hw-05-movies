@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-
+import Cast from '../pages/Cast';
 import { Header } from '../styles/HeaderStyled';
 import { HeaderLinks } from '../styles/NavLinksStyled';
 import HomePage from '../pages/HomePage';
@@ -19,8 +19,8 @@ export default function App() {
           <Route index element={<MoviesList />} />
         </Route>
         <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" />
-          <Route path="reviews" />
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<h2>Reviews</h2>} />
         </Route>
         <Route path="/movies" element={<Movies />} />
       </Routes>
