@@ -21,6 +21,7 @@ export const StyledMovieName = styled.span`
 export const MovieLink = styled(Link)`
   display: flex;
   align-items: center;
+
   color: #000;
   text-decoration: none;
   transition: font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,4 +1,4 @@
-import getTrendingMoviesFromAPI from 'helpers/requestsToAPI';
+import { getTrendingMoviesFromAPI } from 'helpers/requestsToAPI';
 import { useEffect, useState } from 'react';
 import { StyledMoviesList } from './MoviesListStyled';
 import MovieItem from 'components/MovieItem/MovieItem';
@@ -13,7 +13,7 @@ export default function MoviesList() {
         const response = await getTrendingMoviesFromAPI();
         setMovies(
           response.map(movie => ({
-            title: movie.original_title ?? movie.name,
+            title: movie.original_title,
             id: movie.id,
           }))
         );
