@@ -1,25 +1,36 @@
-import {
-  StyledMoviesList,
-  StyledMoviesItem,
-  StyledMovieName,
-  MovieLink,
-} from './MoviesListStyled';
-import { IoRocketSharp } from 'react-icons/io5';
+import getTrendingMoviesFromAPI from 'helpers/requestsToAPI';
+import { useEffect, useState } from 'react';
+import { StyledMoviesList } from './MoviesListStyled';
+import MovieItem from 'components/MovieItem/MovieItem';
 
-export default function MoviesList({ movies }) {
-  return (
-    <StyledMoviesList>
-      {movies.map(movie => {
-        const { id, title } = movie;
-        return (
-          <StyledMoviesItem key={id}>
-            <MovieLink to="/movies">
-              <IoRocketSharp />
-              <StyledMovieName>{title}</StyledMovieName>
-            </MovieLink>
-          </StyledMoviesItem>
+export default function MoviesList() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    if (movies.length !== 0) return;
+    async function handleAPIResponse() {
+      try {
+        const response = await getTrendingMoviesFromAPI();
+        setMovies(
+          response.map(movie => ({
+            title: movie.original_title ?? movie.name,
+            id: movie.id,
+          }))
         );
-      })}
-    </StyledMoviesList>
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    handleAPIResponse();
+  }, [movies]);
+
+  return (
+    <>
+      <StyledMoviesList>
+        {movies.map(movie => {
+          return <MovieItem key={movie.id} props={movie} />;
+        })}
+      </StyledMoviesList>
+    </>
   );
 }
