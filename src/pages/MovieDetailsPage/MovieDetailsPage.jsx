@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { getMovieById } from '../../helpers/requestsToAPI';
-import { Button, GoBackText, GoBackLink } from './StyledMovieDetailsPage';
+import { Button, GoBackLink } from './StyledMovieDetailsPage';
 import { IoArrowBackCircle } from 'react-icons/io5';
 import { Wrapper } from '../HomePage/HomePageStyled';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
@@ -39,6 +39,7 @@ export default function MovieDetailsPage() {
         <>
           <MovieDetails movie={movie} />
           <AdditionalInformation />
+          <Outlet />
         </>
       )}
     </Wrapper>
