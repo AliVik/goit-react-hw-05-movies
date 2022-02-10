@@ -24,3 +24,17 @@ export async function getMovieCast(movieId) {
   );
   return response.data.cast;
 }
+
+export async function getMovieReviews(movieId) {
+  const response = await axios.get(
+    `${API_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`
+  );
+  return response.data.results;
+}
+
+export async function getMovieByQuery(query) {
+  const response = await axios.get(
+    `${API_URL}/search/movie?api_key=${API_KEY}&query=${query}`
+  );
+  return response.data.results;
+}
