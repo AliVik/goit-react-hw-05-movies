@@ -1,16 +1,16 @@
+import { CastListStyled } from './StyledCastList';
+import CastItem from 'components/CastItem';
+// import PropTypes from 'prop-types';
+
 export default function CastList({ casts }) {
   return (
-    <ul>
+    <CastListStyled>
       {casts.map(cast => {
         const { name, character, id, img } = cast;
         return (
-          <li key={id}>
-            <img src={`https://image.tmdb.org/t/p/w500${img}`} alt={name} />
-            <p>{name}</p>
-            <p>Character: {character}</p>
-          </li>
+          <CastItem key={id} name={name} character={character} img={img} />
         );
       })}
-    </ul>
+    </CastListStyled>
   );
 }
