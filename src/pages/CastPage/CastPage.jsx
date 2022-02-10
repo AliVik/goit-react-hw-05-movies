@@ -27,6 +27,6 @@ export default function Cast() {
     }
     handleMovieCast();
   }, [movieId]);
-  console.log(casts);
+
   return <>{casts && <CastList casts={casts} />}</>;
 }
