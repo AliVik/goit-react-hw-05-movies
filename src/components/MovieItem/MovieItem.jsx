@@ -2,7 +2,7 @@ import {
   StyledMoviesItem,
   StyledMovieName,
   MovieLink,
-} from '../MoviesList/MoviesListStyled';
+} from '../../pages/TrendingMoviesPage/StyledTrendingMoviesPage';
 import { IoRocketSharp } from 'react-icons/io5';
 
 export default function MovieItem({ props }) {
