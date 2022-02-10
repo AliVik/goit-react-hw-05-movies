@@ -1,0 +1,10 @@
+import styled from 'styled-components';
+
+export const CastListStyled = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: calc((100% - 20px)/4)
+  
+  margin: auto;
+  
+`;
