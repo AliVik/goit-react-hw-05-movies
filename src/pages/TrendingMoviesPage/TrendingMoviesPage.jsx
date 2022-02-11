@@ -1,7 +1,7 @@
 import { getTrendingMoviesFromAPI } from 'helpers/requestsToAPI';
 import { useEffect, useState } from 'react';
 import { StyledMoviesList } from './StyledTrendingMoviesPage';
-import MovieItem from 'components/MovieItem/MovieItem';
+import MovieItem from 'components/MovieItem';
 
 export default function MoviesListPage() {
   const [movies, setMovies] = useState([]);
@@ -11,10 +11,12 @@ export default function MoviesListPage() {
     async function handleAPIResponse() {
       try {
         const response = await getTrendingMoviesFromAPI();
+        console.log(response);
         setMovies(
           response.map(movie => ({
             title: movie.original_title,
             id: movie.id,
+            poster_path: movie.poster_path,
           }))
         );
       } catch (error) {
