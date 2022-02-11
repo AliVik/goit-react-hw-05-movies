@@ -3,15 +3,17 @@ import {
   StyledMovieName,
   MovieLink,
 } from '../../pages/TrendingMoviesPage/StyledTrendingMoviesPage';
-import { IoRocketSharp } from 'react-icons/io5';
 
 export default function MovieItem({ props }) {
-  const { id, title } = props;
+  const { id, title, poster_path } = props;
 
   return (
     <StyledMoviesItem key={id}>
       <MovieLink to={`/movies/${id}`}>
-        <IoRocketSharp />
+        <img
+          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+          alt={title}
+        />
         <StyledMovieName>{title}</StyledMovieName>
       </MovieLink>
     </StyledMoviesItem>
