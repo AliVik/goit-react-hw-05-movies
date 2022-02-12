@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'helpers/requestsToAPI';
 import CastList from 'components/CastList';
+import * as Scroll from 'react-scroll';
 
 export default function Cast() {
   const { movieId } = useParams();
   const [casts, setCasts] = useState(null);
+  const scroll = Scroll.animateScroll;
 
   useEffect(() => {
     if (!movieId) return;
@@ -27,6 +29,9 @@ export default function Cast() {
     }
     handleMovieCast();
   }, [movieId]);
+  if (casts) {
+    scroll.scrollTo(700);
+  }
 
   return <>{casts && <CastList casts={casts} />}</>;
 }
