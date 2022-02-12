@@ -11,7 +11,7 @@ export default function MoviesListPage() {
     async function handleAPIResponse() {
       try {
         const response = await getTrendingMoviesFromAPI();
-        console.log(response);
+
         setMovies(
           response.map(movie => ({
             title: movie.original_title,
