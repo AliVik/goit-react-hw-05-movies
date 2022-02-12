@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ReviewListTag = styled.ul`
-  padding: 0;
-  margin: 0;
+  padding-left: 100px;
   max-width: 700px;
-  padding-left: 20px;
+  margin-top: 40px;
+  text-align: start;
 `;

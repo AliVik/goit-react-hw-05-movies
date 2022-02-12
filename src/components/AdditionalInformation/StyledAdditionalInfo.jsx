@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const AddInfoWrapper = styled.div`
-  padding-left: 20px;
-`;
-
 export const AddInfoLinks = styled(Link)`
   display: flex;
   align-items: center;
@@ -16,11 +12,15 @@ export const AddInfoLinks = styled(Link)`
     font-weight: bold;
   }
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-right: 10px;
   }
 `;
 
 export const AddInfoPointsText = styled.span`
   display: block;
   margin-left: 5px;
+`;
+
+export const AddInfoLinksWrapper = styled.div`
+  display: flex;
 `;

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const HomeHeader = styled.h1`
-  margin: 0;
+  margin: auto;
+  max-width: 300px;
 `;
 
 export const Wrapper = styled.div`
