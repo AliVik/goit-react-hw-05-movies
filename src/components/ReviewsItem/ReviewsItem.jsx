@@ -24,7 +24,9 @@ export default function ReviewsItem({ username, rating, created, content }) {
   );
 }
 
-ReviewsItem.defaultProps = {
-  username: 'unknown',
-  rating: 'N/A',
+ReviewsItem.propTypes = {
+  username: PropTypes.string.isRequired,
+  rating: PropTypes.number,
+  created: PropTypes.arrayOf(PropTypes.string).isRequired,
+  content: PropTypes.string.isRequired,
 };

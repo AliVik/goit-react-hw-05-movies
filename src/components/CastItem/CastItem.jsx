@@ -1,10 +1,10 @@
 import { StyledCastItem, CastImg } from './StyledCastItem';
 import noPhoto from '../../images/no-photoImg.png';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-export default function CastItem({ id, img, name, character }) {
+export default function CastItem({ img, name, character }) {
   return (
-    <StyledCastItem key={id}>
+    <StyledCastItem>
       {img ? (
         <CastImg src={`https://image.tmdb.org/t/p/w500${img}`} alt={name} />
       ) : (
@@ -16,3 +16,9 @@ export default function CastItem({ id, img, name, character }) {
     </StyledCastItem>
   );
 }
+
+CastItem.propTypes = {
+  img: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  character: PropTypes.string.isRequired,
+};

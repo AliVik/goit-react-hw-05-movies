@@ -1,6 +1,6 @@
 import { CastListStyled } from './StyledCastList';
 import CastItem from 'components/CastItem';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default function CastList({ casts }) {
   return (
@@ -14,3 +14,11 @@ export default function CastList({ casts }) {
     </CastListStyled>
   );
 }
+
+CastList.propTypes = {
+  casts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+    })
+  ),
+};

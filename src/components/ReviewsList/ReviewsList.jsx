@@ -1,5 +1,6 @@
 import ReviewsItem from '../ReviewsItem';
 import { ReviewListTag } from './StyledReviewList';
+import PropTypes from 'prop-types';
 
 export default function ReviewsList({ reviews }) {
   return (
@@ -20,3 +21,12 @@ export default function ReviewsList({ reviews }) {
     </ReviewListTag>
   );
 }
+
+ReviewsList.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      author_details: PropTypes.object,
+    })
+  ),
+};

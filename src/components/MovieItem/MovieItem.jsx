@@ -5,6 +5,7 @@ import {
   Image,
 } from './StyledMovieItem';
 import noPoster from '../../images/no_poster.jpg';
+import PropTypes from 'prop-types';
 
 export default function MovieItem({ props }) {
   const { id, title, poster_path } = props;
@@ -26,3 +27,11 @@ export default function MovieItem({ props }) {
     </StyledMoviesItem>
   );
 }
+
+MovieItem.propTypes = {
+  props: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
+  }),
+};
