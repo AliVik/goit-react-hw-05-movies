@@ -11,6 +11,7 @@ export const StyledMoviesItem = styled.li`
   list-style: none;
   margin-bottom: 20px;
   margin-right: 20px;
+  max-width: 350px;
 `;
 
 export const StyledMovieName = styled.span`
