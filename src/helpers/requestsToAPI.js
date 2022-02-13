@@ -32,9 +32,9 @@ export async function getMovieReviews(movieId) {
   return response.data.results;
 }
 
-export async function getMovieByQuery(query) {
+export async function getMovieByQuery(query, page) {
   const response = await axios.get(
-    `${API_URL}/search/movie?api_key=${API_KEY}&query=${query}`
+    `${API_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`
   );
-  return response.data.results;
+  return response.data;
 }
