@@ -43,9 +43,9 @@ export default function Movies() {
     async function getMoviesByQuery() {
       try {
         const moviesResults = await getMovieByQuery(query, page);
-
-        if (moviesResults.length === 0) {
+        if (moviesResults.results.length === 0) {
           toast.error(`Sorry, there is no films with ${query}`);
+          setSearchParams('');
         }
         setMovies(movies => [...movies, ...moviesResults.results]);
       } catch (error) {
