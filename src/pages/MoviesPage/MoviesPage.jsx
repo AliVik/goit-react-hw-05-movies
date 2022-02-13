@@ -7,12 +7,16 @@ import { Wrapper } from '../HomePage/HomePageStyled';
 import { getMovieByQuery } from '../../helpers/requestsToAPI';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import QueryMovieListPage from '../QueryMovieListPage';
+import LoadMoreBtn from 'components/LoadMoreBtn';
+import * as Scroll from 'react-scroll';
 
 export default function Movies() {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
-  let [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
+  const scroll = Scroll.animateScroll;
 
   const onInputChange = evt => {
     setQuery(evt.target.value);
@@ -23,23 +27,33 @@ export default function Movies() {
     const form = evt.target;
     if (query === '') toast.error('Please, write down a movie');
     setSearchParams({ query });
+    setPage(1);
+    setMovies([]);
     form.reset();
   };
 
+  const onLoadMore = () => {
+    setPage(page => page + 1);
+    scroll.scrollToBottom();
+  };
   useEffect(() => {
     if (location.search === '') return;
     const query = searchParams.get('query');
 
     async function getMoviesByQuery() {
       try {
-        const moviesResults = await getMovieByQuery(query);
-        setMovies(moviesResults);
+        const moviesResults = await getMovieByQuery(query, page);
+
+        if (moviesResults.length === 0) {
+          toast.error(`Sorry, there is no films with ${query}`);
+        }
+        setMovies(movies => [...movies, ...moviesResults.results]);
       } catch (error) {
         console.log(error);
       }
     }
     getMoviesByQuery();
-  }, [location.search, searchParams]);
+  }, [location.search, searchParams, page]);
 
   return (
     <Wrapper>
@@ -60,6 +74,7 @@ export default function Movies() {
         </SearchButton>
       </SearchForm>
       <QueryMovieListPage movies={movies} />
+      {movies.length > 0 && <LoadMoreBtn onClick={onLoadMore} />}
       <Toaster />
     </Wrapper>
   );
