@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { StyledMoviesList } from '../TrendingMoviesPage/StyledTrendingMoviesPage';
 
 import MovieItem from '../../components/MovieItem';
