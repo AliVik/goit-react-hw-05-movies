@@ -66,7 +66,7 @@ export default function Movies() {
           onChange={onInputChange}
         />
         <SearchButton type="submit">
-          <IconContext.Provider value={{ size: '40px' }}>
+          <IconContext.Provider value={{ size: '40px', color: 'fff' }}>
             <div>
               <RiSearchEyeFill />
             </div>
