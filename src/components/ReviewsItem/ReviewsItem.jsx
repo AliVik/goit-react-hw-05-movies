@@ -5,6 +5,8 @@ import {
   ReviewsNameWrapper,
   ReviewsRating,
   ReviewsText,
+  ReviewsName,
+  ReviewsDate,
 } from './StyledReviewsItem';
 
 export default function ReviewsItem({ username, rating, created, content }) {
@@ -12,11 +14,11 @@ export default function ReviewsItem({ username, rating, created, content }) {
     <ReviewsItemTag>
       <ReviewsItemWrapper>
         <ReviewsNameWrapper>
-          <h2>{username}</h2>
+          <ReviewsName>{username}</ReviewsName>
           {rating && <ReviewsRating>{rating}/10</ReviewsRating>}
         </ReviewsNameWrapper>
 
-        <span>{created}</span>
+        <ReviewsDate>{created}</ReviewsDate>
       </ReviewsItemWrapper>
 
       <ReviewsText>{content}</ReviewsText>

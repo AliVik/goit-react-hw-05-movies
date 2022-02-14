@@ -6,6 +6,8 @@ import {
   MovieTitle,
   GenreItem,
   GenreList,
+  MovieText,
+  SecondaryHeaders,
 } from './StyledMovieDetails';
 import noPoster from '../../images/no_poster.jpg';
 import AdditionalInformation from 'components/AdditionalInformation';
@@ -27,10 +29,10 @@ export default function MovieDetail({ movie }) {
 
       <InfoWrapper>
         <MovieTitle>{original_title}</MovieTitle>
-        <p>User score: {vote_average * 10}%</p>
-        <h2>Overview</h2>
-        <p>{overview}</p>
-        <h2>Genres</h2>
+        <MovieText>User score: {vote_average * 10}%</MovieText>
+        <SecondaryHeaders>Overview</SecondaryHeaders>
+        <MovieText>{overview}</MovieText>
+        <SecondaryHeaders>Genres</SecondaryHeaders>
         <GenreList>
           {genres.map(genre => {
             const id = nanoid();

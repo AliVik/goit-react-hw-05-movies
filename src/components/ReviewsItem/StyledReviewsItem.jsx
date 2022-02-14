@@ -20,9 +20,19 @@ export const ReviewsRating = styled.span`
   margin-left: 10px;
   font-weight: bold;
   font-size: 24px;
+  color: #fff;
 `;
 
 export const ReviewsText = styled.p`
   padding-left: 10px;
   padding-right: 10px;
+  color: #fff;
+`;
+
+export const ReviewsName = styled.h2`
+  color: #fff;
+`;
+
+export const ReviewsDate = styled.span`
+  color: #fff;
 `;

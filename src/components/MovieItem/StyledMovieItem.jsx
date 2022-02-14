@@ -18,6 +18,7 @@ export const StyledMovieName = styled.span`
   display: block;
   margin-top: 10px;
   text-align: center;
+  color: #fff;
 `;
 
 export const MovieLink = styled(Link)`

@@ -1,4 +1,4 @@
-import { StyledCastItem, CastImg } from './StyledCastItem';
+import { StyledCastItem, CastImg, CastText } from './StyledCastItem';
 import noPhoto from '../../images/no-photoImg.png';
 import PropTypes from 'prop-types';
 
@@ -11,8 +11,8 @@ export default function CastItem({ img, name, character }) {
         <CastImg src={noPhoto} alt={name} />
       )}
 
-      <p>{name}</p>
-      <p>Character: {character}</p>
+      <CastText>{name}</CastText>
+      <CastText>Character: {character}</CastText>
     </StyledCastItem>
   );
 }

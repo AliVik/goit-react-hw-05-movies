@@ -2,6 +2,7 @@ import {
   AddInfoLinks,
   AddInfoPointsText,
   AddInfoLinksWrapper,
+  AddInfoHeader,
 } from './StyledAdditionalInfo';
 import { IoPeopleSharp } from 'react-icons/io5';
 import { MdOutlineRateReview } from 'react-icons/md';
@@ -9,7 +10,7 @@ import { MdOutlineRateReview } from 'react-icons/md';
 export default function AdditionalInformation() {
   return (
     <>
-      <h3>Additional information</h3>
+      <AddInfoHeader>Additional information</AddInfoHeader>
       <AddInfoLinksWrapper>
         <AddInfoLinks to="cast">
           <IoPeopleSharp />

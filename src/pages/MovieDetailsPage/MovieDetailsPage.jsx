@@ -32,7 +32,7 @@ export default function MovieDetailsPage() {
         type="button"
         onClick={() => navigate(currentLocation?.current?.state?.from ?? '/')}
       >
-        <IconContext.Provider value={{ size: '70px', color: '#330066' }}>
+        <IconContext.Provider value={{ size: '70px', color: '#fff' }}>
           <div>
             <IoArrowBackCircle />
           </div>

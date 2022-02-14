@@ -5,6 +5,7 @@ export const HomeHeader = styled.h1`
   margin: auto;
   max-width: 300px;
   text-transform: uppercase;
+  color: #fff;
 `;
 
 export const Wrapper = styled.div`

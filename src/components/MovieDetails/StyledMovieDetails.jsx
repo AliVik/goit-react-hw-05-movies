@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const PictureWithInfoWrapper = styled.div`
   display: flex;
-  padding-left: 100px;
   max-width: 800px;
+  margin: auto;
 `;
 
 export const InfoWrapper = styled.div`
-  margin-left: 30px;
+  margin-left: 80px;
 `;
 
 export const MoviePoster = styled.img`
@@ -17,6 +17,7 @@ export const MoviePoster = styled.img`
 
 export const MovieTitle = styled.h1`
   margin: 0;
+  color: #fff;
 `;
 
 export const GenreItem = styled.li`
@@ -24,9 +25,18 @@ export const GenreItem = styled.li`
   &:not(:last-child) {
     margin-right: 5px;
   }
+  color: #fff;
 `;
 
 export const GenreList = styled.ul`
   display: flex;
   padding: 0;
+`;
+
+export const MovieText = styled.p`
+  color: #fff;
+`;
+
+export const SecondaryHeaders = styled.h2`
+  color: #fff;
 `;
