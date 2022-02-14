@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { IconContext } from 'react-icons';
 import { useParams, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { getMovieById } from '../../helpers/requestsToAPI';
@@ -12,6 +12,7 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const currentLocation = useRef(location);
 
   useEffect(() => {
     async function getMovieData() {
@@ -29,11 +30,7 @@ export default function MovieDetailsPage() {
     <Wrapper>
       <Button
         type="button"
-        onClick={() => {
-          return location.pathname !== `/movies/${movieId}`
-            ? navigate(-2)
-            : navigate(-1);
-        }}
+        onClick={() => navigate(currentLocation?.current?.state?.from ?? '/')}
       >
         <IconContext.Provider value={{ size: '70px', color: '#330066' }}>
           <div>
