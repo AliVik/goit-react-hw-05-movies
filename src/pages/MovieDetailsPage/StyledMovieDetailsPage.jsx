@@ -12,6 +12,6 @@ export const Button = styled.button`
 export const CastAndReviewsWrapper = styled.div`
   height: auto;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 250px;
   padding-bottom: 30px;
 `;

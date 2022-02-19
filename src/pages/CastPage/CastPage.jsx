@@ -30,7 +30,7 @@ export default function Cast() {
     handleMovieCast();
   }, [movieId]);
   if (casts) {
-    scroll.scrollTo(700);
+    scroll.scrollTo(1000);
   }
 
   return <>{casts && <CastList casts={casts} />}</>;

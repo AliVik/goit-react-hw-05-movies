@@ -38,7 +38,7 @@ export default function ReviewsPage() {
     }
     getReviews();
   }, [movieId]);
-  scroll.scrollTo(500);
+  scroll.scrollTo(1000);
   return (
     <>
       {reviews.length > 0 ? <ReviewsList reviews={reviews} /> : <NoReviews />}
