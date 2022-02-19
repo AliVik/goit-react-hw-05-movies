@@ -73,7 +73,7 @@ export default function Movies() {
           </IconContext.Provider>
         </SearchButton>
       </SearchForm>
-      <QueryMovieListPage movies={movies} />
+      <QueryMovieListPage movies={movies} location={location} />
       {movies.length > 0 && <LoadMoreBtn onClick={onLoadMore} />}
       <Toaster />
     </Wrapper>

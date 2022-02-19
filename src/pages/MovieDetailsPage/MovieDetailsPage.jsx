@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { IconContext } from 'react-icons';
 import { useParams, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { getMovieById } from '../../helpers/requestsToAPI';
-import { Button } from './StyledMovieDetailsPage';
+import { Button, CastAndReviewsWrapper } from './StyledMovieDetailsPage';
 import { IoArrowBackCircle } from 'react-icons/io5';
 import { Wrapper } from '../HomePage/HomePageStyled';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
@@ -12,7 +12,6 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const currentLocation = useRef(location);
 
   useEffect(() => {
     async function getMovieData() {
@@ -30,7 +29,7 @@ export default function MovieDetailsPage() {
     <Wrapper>
       <Button
         type="button"
-        onClick={() => navigate(currentLocation?.current?.state?.from ?? '/')}
+        onClick={() => navigate(location?.state?.from ?? '/')}
       >
         <IconContext.Provider value={{ size: '70px', color: '#fff' }}>
           <div>
@@ -38,13 +37,10 @@ export default function MovieDetailsPage() {
           </div>
         </IconContext.Provider>
       </Button>
-      {movie && (
-        <>
-          <MovieDetails movie={movie} />
-
-          <Outlet />
-        </>
-      )}
+      {movie && <MovieDetails movie={movie} />}
+      <CastAndReviewsWrapper>
+        <Outlet />
+      </CastAndReviewsWrapper>
     </Wrapper>
   );
 }
