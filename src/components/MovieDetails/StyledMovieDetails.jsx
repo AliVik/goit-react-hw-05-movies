@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PictureWithInfoWrapper = styled.div`
   display: flex;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
 `;
 
@@ -11,8 +11,8 @@ export const InfoWrapper = styled.div`
 `;
 
 export const MoviePoster = styled.img`
-  width: 450px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
 `;
 
 export const MovieTitle = styled.h1`

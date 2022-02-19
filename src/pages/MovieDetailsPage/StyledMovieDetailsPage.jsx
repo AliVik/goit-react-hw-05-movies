@@ -5,7 +5,13 @@ export const Button = styled.button`
   cursor: pointer;
   padding-left: 60px;
 
-  margin-bottom: 10px;
   border: none;
   background-color: transparent;
+`;
+
+export const CastAndReviewsWrapper = styled.div`
+  height: auto;
+  margin: auto;
+  margin-top: 60px;
+  padding-bottom: 30px;
 `;

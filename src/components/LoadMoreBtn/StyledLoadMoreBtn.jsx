@@ -5,9 +5,12 @@ export const LoadButton = styled.button`
   height: 40px;
   padding-left: 20px;
   padding-right: 20px;
+
   margin: auto;
+  margin-bottom: 40px;
   border: none;
   border-radius: 5%;
-  background-color: #330066;
-  color: #fff;
+  font-weight: 900;
+  color: #330066;
+  background-color: #e65c00;
 `;

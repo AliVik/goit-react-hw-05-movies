@@ -7,5 +7,4 @@ export const CastListStyled = styled.ul`
   justify-content: center;
   padding: 0;
   margin: auto;
-  margin-top: 50px;
 `;
